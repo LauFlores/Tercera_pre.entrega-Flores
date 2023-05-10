@@ -4,10 +4,10 @@ from App import views
 urlpatterns = [
    
     path('', views.inicio, name="Inicio"), #este era nuestro primer view
-    path('clubes', views.clubes, name="Clubes"),
-    path('profesores', views.profesores, name="Profesores"),
-    path('alumnos', views.alumnos, name="Alumnos"),
-    path('reservas', views.reservas, name="Reservas"),
+    path('reserva', views.reserva, name="reserva"),
+    path('club', views.club, name="club"),
+    path('profesor', views.profesor, name="profesor"),
+    path('alumno', views.alumno, name="alumno"),
     path('buscarReserva',views.buscarReserva,name="BuscarReserva"),
     path('buscar/',views.buscar),
 ]

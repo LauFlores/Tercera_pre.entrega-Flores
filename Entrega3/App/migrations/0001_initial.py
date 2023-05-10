@@ -14,8 +14,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Alumno',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('Id_alumno', models.IntegerField(verbose_name='idalumno')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='id')),
+                ('id_alumno', models.IntegerField(verbose_name='idalumno')),
                 ('nombre', models.CharField(max_length=30)),
                 ('apellido', models.CharField(max_length=30)),
                 ('email', models.EmailField(max_length=254)),
@@ -25,8 +25,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Club',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('Id_club', models.IntegerField(verbose_name='idclub')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='id')),
+                ('id_club', models.IntegerField(verbose_name='idclub')),
                 ('nombre', models.CharField(max_length=40)),
                 ('email', models.EmailField(max_length=254)),
             ],
@@ -34,8 +34,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Profesor',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('Id_profesor', models.IntegerField(verbose_name='idprofesor')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='id')),
+                ('id_profesor', models.IntegerField(verbose_name='idprofesor')),
                 ('nombre', models.CharField(max_length=30)),
                 ('apellido', models.CharField(max_length=30)),
                 ('email', models.EmailField(max_length=254)),
@@ -44,13 +44,13 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Reserva',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('Id_reserva', models.IntegerField(verbose_name='idreserva')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='id')),
+                ('id_reserva', models.IntegerField(verbose_name='idreserva')),
                 ('fecha', models.DateField()),
                 ('hora', models.DateTimeField()),
-                ('Id_profesor', models.CharField(max_length=50, verbose_name='idprofesor')),
-                ('Id_club', models.CharField(max_length=50, verbose_name='idclub')),
-                ('Id_alumno', models.CharField(max_length=50, verbose_name='idalumno')),
+                ('id_profesor', models.CharField(max_length=50, verbose_name='idprofesor')),
+                ('id_club', models.CharField(max_length=50, verbose_name='idclub')),
+                ('id_alumno', models.CharField(max_length=50, verbose_name='idalumno')),
                 ('num_cancha', models.IntegerField()),
             ],
         ),
