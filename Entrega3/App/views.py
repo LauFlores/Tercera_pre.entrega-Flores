@@ -24,7 +24,7 @@ def club(request):
         if miFormulario.is_valid:
             informacion=miFormulario.cleaned_data
             club=Club(
-                id_club=informacion['id_club'],
+                codigo_de_reserva=informacion['codigo_de_reserva'],
                 nombre=informacion['nombre'],
                 email=informacion['email'],
                 num_cancha=informacion['num_cancha'])
