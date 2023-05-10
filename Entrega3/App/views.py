@@ -93,11 +93,11 @@ def buscarReserva(request):
      return render(request,'App/buscarReserva.html')
 
 def buscar(request):
-     if request.GET['curso']:
-          club = request.GET['curso']
-          club= club.objects.filter(curso__icontains=club)
+     if request.GET['codigo_de_reserva']:
+          codigo_de_reserva = request.GET['codigo_de_reserva']
+          reserva= reserva.objects.filter(codigo_de_reserva__icontains=codigo_de_reserva)
 
-          return render(request,'App/resultadosBusqueda.html', {"cursos":club, "comisiones": club })
+          return render(request,'App/resultadosBusqueda.html', {"reserva":reserva, "codigo_de_reserva": codigo_de_reserva })
      else:
           respuesta= "No enviaste datos"
 

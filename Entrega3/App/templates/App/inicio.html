@@ -5,6 +5,23 @@
 <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
     <h1>¡Bienvenido a Padel Work Out!</h1>
     <p>Te ayudamos a gestionar tus clases</p>
-    <h3>Esperamos sea de tu utilidad :)</h3>
+    <h5>Esperamos sea de tu utilidad :)</h5>
+    
+    <p></p>
+    <p>Ingresa el codigo de reserva</p>
+
+    {% if miFormulario4.errors %} 
+    
+    <p style="color: red;"></p>
+    
+    {% endif %}
+
+    <form action="/App/buscar/" method="get">
+
+        <input type="code" name="codigo_de_reserva" id="codigo_de_reserva">
+
+        <input type="submit" value="Buscar">
+        
+     </form> 
 
 {% endblock %}

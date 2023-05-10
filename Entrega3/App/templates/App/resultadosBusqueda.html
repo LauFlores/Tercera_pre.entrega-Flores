@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario - Agregar Curso</title>
+    <title>Formulario - Agregar Cod. de Reserva</title>
 </head>
 <body>
-     <p> Estamos buscando el: {{curso}}</p>
-     {% if cursos %} 
+     <p> Estamos buscando el siguiente Codigo: {{codigo_de_reserva}}</p>
+     {% if reserva %} 
      <ul>
-     {% for curso in cursos %} 
-         <li>{{curso.nombre}}</li>
-         <li>{{curso.curso}}</li>
+     {% for reserva in reserva %} 
+        <li>{{reserva.codigo_de_reserva}}</li>
+         <li>{{reserva.fecha}}</li>
+         <li>{{reserva.hora}}</li>
      {% endfor %}
      </ul>
      {% endif %}
