@@ -8,14 +8,24 @@
 </head>
 <body>
      <p> Estamos buscando el siguiente Codigo: {{codigo_de_reserva}}</p>
-     {% if reserva %} 
+     {% if reservas %} 
      <ul>
-     {% for reserva in reserva %} 
-        <li>{{reserva.codigo_de_reserva}}</li>
-         <li>{{reserva.fecha}}</li>
-         <li>{{reserva.hora}}</li>
-     {% endfor %}
+        {% for r in reservas %} 
+            <li>{{ r.codigo_de_reserva }}</li>
+            <li>{{ r.fecha }}</li>
+            <li>{{ r.hora }}</li>
+        {% endfor %}
      </ul>
-     {% endif %}
+    {% endif %}
 </body>
 </html>
+
+{% if reservas %} 
+    <ul>
+        {% for r in reservas %} 
+            <li>{{ r.codigo_de_reserva }}</li>
+            <li>{{ r.fecha }}</li>
+            <li>{{ r.hora }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}

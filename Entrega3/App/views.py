@@ -92,15 +92,17 @@ def reserva(request):
 def buscarReserva(request):
      return render(request,'App/buscarReserva.html')
 
+
 def buscar(request):
-     if request.GET['codigo_de_reserva']:
-          codigo_de_reserva = request.GET['codigo_de_reserva']
-          reserva= reserva.objects.filter(codigo_de_reserva__icontains=codigo_de_reserva)
+    codigo_de_reserva = request.GET.get('codigo_de_reserva')
+    reservas = []
 
-          return render(request,'App/resultadosBusqueda.html', {"reserva":reserva, "codigo_de_reserva": codigo_de_reserva })
-     else:
-          respuesta= "No enviaste datos"
+    if codigo_de_reserva:
+        reservas = Reserva.objects.filter(codigo_de_reserva__icontains=codigo_de_reserva)
 
-     return HttpResponse(respuesta)
+    context = {
+        'reservas': reservas,
+        'codigo_de_reserva': codigo_de_reserva,
+    }
 
-
+    return render(request, 'App/resultadosBusqueda.html', context)
